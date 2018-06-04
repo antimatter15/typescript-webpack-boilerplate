@@ -1,0 +1,59 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-serve webpack.config.js",
+    "test": "jest",
+    "fmt": "prettier --tab-width=4 --no-semi --single-quote --jsx-bracket-same-line --trailing-comma=es5 --print-width=100 --write src/**/*.{tsx,ts,js,less,json} tsconfig.json webpack.config.js .babelrc.js"
+  },
+  "dependencies": {
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.5",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "awesome-typescript-loader": "^5.0.0",
+    "connect-history-api-fallback": "^1.5.0",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.1.0",
+    "koa-connect": "^2.0.1",
+    "lint-staged": "^7.1.3",
+    "style-loader": "^0.21.0",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.1",
+    "webpack": "^4.10.2",
+    "webpack-serve": "^1.0.2"
+  },
+  "lint-staged": {
+    "*.{js,tsx,ts,json,css,md,less}": [
+      "prettier --tab-width=4 --no-semi --single-quote --jsx-bracket-same-line --trailing-comma=es5 --print-width=100 --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ]
+  }
+}
